@@ -30,6 +30,7 @@ class _GoogleMapPageState extends State<GoogleMapPage> {
 
   Widget googleMapUI() {
     return Consumer<LocationProvider>(builder: (consumeContext, model, child) {
+      // ignore: unnecessary_null_comparison
       if (model.locationPosition != null) {
         return Column(
           children: [
@@ -49,8 +50,9 @@ class _GoogleMapPageState extends State<GoogleMapPage> {
           ],
         );
       }
+      // ignore: avoid_unnecessary_containers
       return Container(
-        child: Center(
+        child: const Center(
           child: CircularProgressIndicator(),
         ),
       );

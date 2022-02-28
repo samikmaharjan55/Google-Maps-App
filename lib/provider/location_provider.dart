@@ -48,6 +48,7 @@ class LocationProvider with ChangeNotifier {
         currentLocation.latitude!,
         currentLocation.longitude!,
       );
+      // ignore: avoid_print
       print(_locationPosition);
 
       _markers = <MarkerId, Marker>{};
@@ -73,6 +74,6 @@ class LocationProvider with ChangeNotifier {
   setCustomMapPin() async {
     _pinLocationIcon = await BitmapDescriptor.fromAssetImage(
         const ImageConfiguration(devicePixelRatio: 2.5),
-        'assets/destination_map_marker.png');
+        'assets/placeholder.png');
   }
 }
